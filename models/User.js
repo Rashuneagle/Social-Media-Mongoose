@@ -36,7 +36,7 @@ const userSchema = new Schema(
   }
 );
 
-applicationSchema
+userSchema
   .virtual('friendCount')
   // Getter
   .get(function () {
