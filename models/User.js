@@ -44,4 +44,6 @@ userSchema
   });
 
 // Create and export the User model
-module.exports = model('User', userSchema);
+const User = model('User', userSchema);
+
+module.exports = User;
