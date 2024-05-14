@@ -31,7 +31,7 @@ const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 // Generate random email address
 const generateRandomEmail = (firstName, lastName) => {
   const randomNumber = Math.floor(Math.random() * 1000);
-  const domain = 'example.com'; // Change this to your desired domain
+  const domain = 'example.com'; 
   return `${firstName.toLowerCase()}.${lastName.toLowerCase()}${randomNumber}@${domain}`;
 };
 

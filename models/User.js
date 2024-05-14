@@ -36,12 +36,13 @@ const userSchema = new Schema(
   }
 );
 
-userSchema
-  .virtual('friendCount')
-  // Getter
-  .get(function () {
-    return this.friends.length;
-  });
+// Define virtual field for friendCount
+userSchema.virtual('friendCount', {
+  ref: 'User',
+  localField: '_id',
+  foreignField: 'friends',
+  count: true // 
+});
 
 // Create and export the User model
 const User = model('User', userSchema);
