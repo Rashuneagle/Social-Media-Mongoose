@@ -63,7 +63,7 @@ async updateUser(req, res) {
       return res.status(404).json({ message: 'No user found with that ID' });
     }
 
-    // Send updated user in response, including virtual field
+   
     res.json({
       ...user.toJSON(),
       friendCount: user.friendCount // Include friendCount in the response
@@ -84,7 +84,7 @@ async updateUser(req, res) {
         return res.status(404).json({ message: 'No user with that ID' });
       }
   
-      // Assuming user.thoughts is an array of thought IDs associated with the user
+      
       await Thought.deleteMany({ _id: { $in: user.thoughts } });
       res.json({ message: 'User and associated thoughts deleted!' });
     } catch (err) {
